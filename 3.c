@@ -1,0 +1,24 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+
+//Questão 3 
+#include <stdio.h>
+
+int main() {
+    int valor = 15;
+    int *ptr = &valor;
+
+    printf("Valor antes da alteracao: %d\n", valor);
+
+    *ptr = 50;
+
+    printf("Valor depois da alteracao: %d\n", valor);
+
+    return 0;
+}
