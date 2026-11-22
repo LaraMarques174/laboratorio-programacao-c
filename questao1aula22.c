@@ -1,0 +1,47 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+
+//Questão 1
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    FILE *arquivo;
+    char nome[50];
+    int matricula;
+    int i;
+
+    arquivo = fopen("funcionarios.txt", "w");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo!\n");
+        return 1;
+    }
+
+    printf("===== CADASTRO DE FUNCIONARIOS =====\n\n");
+
+    for (i = 0; i < 5; i++) {
+        printf("Funcionario %d\n", i + 1);
+
+        printf("Nome: ");
+        fgets(nome, sizeof(nome), stdin);
+        nome[strcspn(nome, "\n")] = '\0';   
+
+        printf("Matricula: ");
+        scanf("%d", &matricula);
+        getchar();                          
+
+        fprintf(arquivo, "%s;%d\n", nome, matricula);
+        printf("\n");
+    }
+
+    fclose(arquivo);
+    printf("Dados gravados com sucesso em funcionarios.txt!\n");
+
+    return 0;
+}
