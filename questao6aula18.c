@@ -1,0 +1,34 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+
+//Questão 6 
+#include <stdio.h>
+
+long long calcularFatorial(int n) {
+    long long resultado = 1;
+    for (int i = 2; i <= n; i++)
+        resultado *= i;
+    return resultado;
+}
+
+int main() {
+    int n;
+
+    printf("===== CALCULADORA DE FATORIAL =====\n\n");
+    do {
+        printf("Digite um numero (0 a 12): ");
+        scanf("%d", &n);
+        if (n < 0 || n > 12)
+            printf("Numero invalido! Tente novamente.\n");
+    } while (n < 0 || n > 12);
+
+    printf("\nFatorial de %d = %lld\n", n, calcularFatorial(n));
+
+    return 0;
+}
